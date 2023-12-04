@@ -1,6 +1,9 @@
 # Conway's Game of Life Simulation
 
-Welcome to the Conway's Game of Life Simulation project! This project is a web-based implementation of the classic cellular automaton devised by mathematician John Conway. The simulation is created using HTML, CSS, and JS, allowing you to explore the complex patterns that emerge from simple rules.
+Welcome to Conway's Game of Life Simulation project! This project is a web-based implementation of the classic cellular automaton devised by mathematician John Conway. The simulation is created using HTML, CSS, and JS, allowing you to explore the complex patterns that emerge from simple rules.
+
+## Live Site
+Check out the game of life on: https://gameoflifep5.netlify.app/
 
 ## Features
 - **User Interaction:** Interact with the simulation using intuitive buttons.
