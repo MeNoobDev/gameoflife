@@ -58,91 +58,20 @@ class Grid {
   }
 
   getNeighborSum(i, j, wrap = false) {
-    if (!wrap) {
-      if (i == 0) {
-        if (j == 0) {
-          return (
-            this.grid[i + 1][j + 1] + this.grid[i][j + 1] + this.grid[i + 1][j]
-          ); //dells with the top left corner
-        } else if (j == this.nCol - 1) {
-          return (
-            this.grid[i + 1][j - 1] + this.grid[i][j - 1] + this.grid[i + 1][j]
-          ); //dells with the top right corner
-        } else {
-          return (
-            this.grid[i][j - 1] +
-            this.grid[i][j + 1] +
-            this.grid[i + 1][j + 1] +
-            this.grid[i + 1][j - 1] +
-            this.grid[i + 1][j]
-          ); //top middles
-        }
-      } else if (i == this.nRow - 1) {
-        if (j == 0) {
-          return (
-            this.grid[i - 1][j] + this.grid[i - 1][j + 1] + this.grid[i][j + 1]
-          ); //dells with the bottom left corner
-        } else if (j == this.nCol - 1) {
-          return (
-            this.grid[i - 1][j] + this.grid[i][j - 1] + this.grid[i - 1][j - 1]
-          ); //dells with the bottom right corner
-        } else {
-          return (
-            this.grid[i - 1][j] +
-            this.grid[i - 1][j - 1] +
-            this.grid[i - 1][j + 1] +
-            this.grid[i][j + 1] +
-            this.grid[i][j - 1]
-          ); //dells with the bottom middles
-        }
-      } else if (j == 0) {
-        //first column
-        if (i != 0 && i != this.nRow - 1)
-          return (
-            this.grid[i - 1][j] +
-            this.grid[i + 1][j] +
-            this.grid[i + 1][j + 1] +
-            this.grid[i - 1][j + 1] +
-            this.grid[i][j + 1]
-          ); //dells with the left middles
-      } else if (j == this.nCol - 1) {
-        //last column
-        if (i != 0 && i != this.nRow - 1)
-          return (
-            this.grid[i - 1][j] +
-            this.grid[i + 1][j] +
-            this.grid[i - 1][j - 1] +
-            this.grid[i][j - 1] +
-            this.grid[i + 1][j - 1]
-          ); //dells with the right  middles
-      } else {
-        return (
-          this.grid[i][j - 1] +
-          this.grid[i][j + 1] +
-          this.grid[i + 1][j] +
-          this.grid[i + 1][j - 1] +
-          this.grid[i + 1][j + 1] +
-          this.grid[i - 1][j] +
-          this.grid[i - 1][j - 1] +
-          this.grid[i - 1][j + 1]
-        ); //dells with the all the rest
-      }
-    } else {
-      let pi = i == 0 ? this.nRow - 1 : i - 1;
-      let pj = j == 0 ? this.nCol - 1 : j - 1;
-      let ni = i == this.nRow - 1 ? 0 : i + 1;
-      let nj = j == this.nCol - 1 ? 0 : j + 1;
-      return (
-        this.grid[pi][j] +
-        this.grid[ni][j] +
-        this.grid[i][nj] +
-        this.grid[i][pj] +
-        this.grid[pi][pj] +
-        this.grid[pi][nj] +
-        this.grid[ni][pj] +
-        this.grid[ni][nj]
-      );
-    }
+    let pi = i == 0 ? this.nRow - 1 : i - 1;
+    let pj = j == 0 ? this.nCol - 1 : j - 1;
+    let ni = i == this.nRow - 1 ? 0 : i + 1;
+    let nj = j == this.nCol - 1 ? 0 : j + 1;
+    return (
+      this.grid[pi][j] +
+      this.grid[ni][j] +
+      this.grid[i][nj] +
+      this.grid[i][pj] +
+      this.grid[pi][pj] +
+      this.grid[pi][nj] +
+      this.grid[ni][pj] +
+      this.grid[ni][nj]
+    );
   }
 
   getCell(px, py) {
