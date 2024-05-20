@@ -48,6 +48,8 @@ class Grid {
     }
   }
 
+  // copies the original array into a new "copy" array
+  // and returns it
   copy() {
     let copy = new Array(this.nRow);
     for (let i = 0; i < this.nRow; i++) {
@@ -57,6 +59,7 @@ class Grid {
     return copy;
   }
 
+  // returns the sum of all 8 neighbours of a cell
   getNeighborSum(i, j, wrap = false) {
     let pi = i == 0 ? this.nRow - 1 : i - 1;
     let pj = j == 0 ? this.nCol - 1 : j - 1;
@@ -74,6 +77,7 @@ class Grid {
     );
   }
 
+  // returns the cell co ordinate
   getCell(px, py) {
     if (
       px < 0 ||
